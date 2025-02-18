@@ -1,0 +1,64 @@
+.Feature{
+    background-color: rgb(255, 255, 244);
+}
+
+.modalbutton{
+    background-color: rgb(252, 252, 252) ;
+    color:rgb(42, 56, 250) ;
+}
+
+.modalbutton:hover{
+    background-color: rgb(42, 56, 250) ;
+}
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5); /* رنگ پس‌زمینه تار */
+    backdrop-filter: blur(2px); /* اعمال تاری به پس‌زمینه */
+    z-index: 1040; /* قرار دادن لایه در زیر Modal */
+  }
+  
+.modal.show {
+    display: block;
+}
+
+#navbar{
+    height: 75px;
+    transition: height 0.3s ease-in-out;
+}
+
+#navbar.open{
+    height: 330px;
+}
+
+.accordion-collapse {
+    max-height: 0; /* شروع با max-height صفر برای پنهان کردن محتوای آکاردئون */
+    overflow: hidden; /* مخفی کردن محتوای اضافی */
+    transition: max-height 0.3s ease-in-out; /* ترنزیشن برای max-height */
+}
+
+.accordion-collapse.show {
+    max-height: 1000px; /* مقدار بزرگ برای max-height که آکاردئون را باز می‌کند */
+}
+
+.accordion-button {
+    display: flex;
+    justify-content: space-between; /* برای قرار دادن شماره سوال و عنوان */
+    width: 100%;
+}
+
+.accordion-item {
+    margin-bottom: 1rem; /* فاصله بین هر آیتم آکاردئون */
+}
+
+.accordion-body {
+    padding: 1rem; /* فضای داخلی محتوای آکاردئون */
+    font-size: 1rem;
+    color: #555; /* رنگ متن */
+    background-color: #f8f9fa; /* رنگ پس‌زمینه محتوای آکاردئون */
+}
