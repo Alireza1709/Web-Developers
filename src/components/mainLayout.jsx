@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { Outlet } from 'react-router-dom';
+import React from 'react';
 import Header from './header';
 import Vuejs from './vuejs';
 import Reacts from './react';

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { useContext } from 'react';
 import modalsContext from '../context/modals';
 import myimg from '../img/myimg.png'

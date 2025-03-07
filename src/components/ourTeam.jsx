@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import p1 from '../img/p1.webp'
 import p2 from '../img/p2.webp'
 import pp from '../img/pp.webp'

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import post1 from '../img/post1.webp'
 import post2 from '../img/post2.webp'
 import post3 from '../img/post3.webp'

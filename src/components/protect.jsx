@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Navigate , Route, Routes } from 'react-router-dom';
+import React from 'react';
+import { Navigate } from 'react-router-dom';
 
 
 const Protect = ({ children }) => {
