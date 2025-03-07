@@ -4,11 +4,17 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import modalsContext from '../context/modals';
 import { useNavigate } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
-const Navbar = ({scrollToContact, scrollToTeam, scrollToBlog, scrollToFeature, scrollToHeader }) => {
+const Navbar = () => {
     const [openNavbar, setOpenNavbar] = useState(false);
     const { openModal } = useContext(modalsContext);
     const { User } = useContext(modalsContext)
+    const {scrollToTeam} = useContext(modalsContext)
+    const {scrollToContact} = useContext(modalsContext)
+    const {scrollToBlog} = useContext(modalsContext)
+    const {scrollToFeature} = useContext(modalsContext)
+    const {scrollToHeader} = useContext(modalsContext)
     console.log(User)
     
     const  navigate = useNavigate()
@@ -42,20 +48,21 @@ const Navbar = ({scrollToContact, scrollToTeam, scrollToBlog, scrollToFeature, s
                     </button>
                     <div className={`collapse navbar-collapse ${openNavbar ? "show" : ""}`} id="navbarSupportedContent">
                         <ul className='navbar-nav mx-auto mb-2 mb-lg-0'>
+                             {/* برای اسکرول کردن به جای navlink از hashlink استفاده میکنیم  */}
                             <li className='nav-item'>
-                                <NavLink onClick={scrollToHeader} to="/" className='nav-link'>Home</NavLink>
+                                <HashLink onClick={scrollToHeader} to="/" className='nav-link'>Home</HashLink>
                             </li>
                             <li onClick={scrollToFeature} className='nav-item'>
-                                <NavLink to="/Feature" className='nav-link'>Feature</NavLink>
+                                <HashLink to="#Feature" className='nav-link'>Feature</HashLink>
                             </li>
                             <li className='nav-item'>
-                                <NavLink onClick={scrollToBlog} to="/Blog" className='nav-link'>Blog</NavLink>
+                                <HashLink onClick={scrollToBlog} to="#Blog" className='nav-link'>Blog</HashLink>
                             </li>
                             <li className='nav-item'>
-                                <NavLink onClick={scrollToTeam} to="/Team" className='nav-link'>Our team</NavLink>
+                                <HashLink onClick={scrollToTeam} to="#Team" className='nav-link'>Our team</HashLink>
                             </li>
                             <li className='nav-item'>
-                                <NavLink onClick={scrollToContact} to="/Contact" className='nav-link'>Contact</NavLink>
+                                <HashLink onClick={scrollToContact} to="#Contact" className='nav-link'>Contact</HashLink>
                             </li>
                         </ul>
                         <div className="d-flex" role="search">

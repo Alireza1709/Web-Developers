@@ -16,6 +16,8 @@ import Questions from './questions';
 import Contact from './contact';
 import Footer from './footer';
 import Dashboard from './dashboard';
+import Protect from './protect';
+import MainLayOut from './mainLayout';
 
 
 
@@ -35,12 +37,12 @@ function App() {
             }
 
             try {
-                const token = localStorage.getItem("token"); // گرفتن توکن از localStorage
+                 // گرفتن توکن از localStorage
             
                 // ارسال توکن در هدر
                 const response = await axios.get("https://reqres.in/api/users/1", {
                     headers: {
-                        Authorization: `Bearer ${token}`, // ارسال توکن در هدر
+                        Authorization: `Bearer ${token}` // ارسال توکن در هدر
                     },
                 });
             
@@ -91,36 +93,23 @@ function App() {
         contactSection.scrollIntoView({ behavior: "smooth" });
     };
 
+
     return (
             <>  
-                <modalsContext.Provider value={{ User , setUser , showModal, openModal, closeModal }}>
+                <modalsContext.Provider value={{ User , setUser , showModal, openModal, closeModal , scrollToContact , scrollToTeam , scrollToBlog , scrollToHeader ,  scrollToFeature}}>
                     {loading ? (
                         <div>Loading...</div> // یا هر محتوای لودینگ دیگری
                     ) : (
                         <>
-                            <Navbar
-                                scrollToContact={scrollToContact}
-                                scrollToTeam={scrollToTeam}
-                                scrollToBlog={scrollToBlog}
-                                scrollToHeader={scrollToHeader}
-                                scrollToFeature={scrollToFeature}
-                            />
-                            <Header />
-                            <Modal User={User} />
-                            <Feature />
-                            <Vuejs />
-                            <Reacts />
-                            <Blog />
-                            <OurTeam />
-                            <Questions />
-                            <Contact />
-                            <Footer />
+                            <Modal User={User}/>
+                        <Routes>
+                            <Route path='/' element={<MainLayOut/>}/>
+                            <Route path="/dashboard" element={<Protect><Dashboard /></Protect>} />  
+                            {/* <Route path="/dashboard" element={<Dashboard/>}/> */}
+                        </Routes>
                         </>
                     )}
                 </modalsContext.Provider>
-                <Routes>
-                        <Route path="/dashboard" element={<Dashboard />}/>
-                </Routes>
             </>
         );
 }

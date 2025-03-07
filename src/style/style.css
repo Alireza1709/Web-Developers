@@ -11,6 +11,14 @@
     background-color: rgb(42, 56, 250) ;
 }
 
+.backbtn{
+    background-color: rgb(252, 252, 252) ;
+    color:rgb(247, 0, 0) ;
+}
+
+.backbtn:hover{
+    background-color: rgb(247, 0, 0) ;
+}
 
 .modal-overlay {
     position: fixed;

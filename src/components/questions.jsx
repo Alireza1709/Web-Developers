@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-const Accordion = () => {
+const Questions = () => {
     const [openAccordion, setOpenAccordion] = useState(null);
     const contentRefs = useRef([]); // ایجاد آرایه‌ای از رفرنس‌ها
 
@@ -64,4 +64,4 @@ const Accordion = () => {
     );
 };
 
-export default Accordion;
+export default Questions;
